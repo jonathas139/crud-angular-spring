@@ -24,3 +24,17 @@ th, td {
   text-align: center; /* Centraliza o texto nas células */
   padding: 10px; /* Adiciona espaçamento entre o conteúdo */
 }
+
+.tabela {
+  width: 100%;
+}
+
+.loading-spinner{
+  width: 95%;
+  padding: 25px;
+  background-color: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
