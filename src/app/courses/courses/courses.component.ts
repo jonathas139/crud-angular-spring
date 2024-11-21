@@ -15,7 +15,7 @@ export class CoursesComponent {
 
   courses$: Observable<Course[]>;
 
-  displayedColumns = ['name','category','actions'];
+
 
   //coursesService: CoursesService;
 

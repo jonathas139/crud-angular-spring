@@ -1,32 +1,16 @@
 /* Centraliza o conteúdo dentro do mat-card */
 mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.column-flex{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-
-}
-
-/* Centraliza o texto da toolbar */
-mat-toolbar {
-  justify-content: center;
-}
-
-/* Centraliza o conteúdo da tabela */
-table {
-  width: 80%; /* Define uma largura para evitar que a tabela ocupe toda a tela */
-  margin: 0 auto; /* Centraliza horizontalmente */
-}
-
-th, td {
-  text-align: center; /* Centraliza o texto nas células */
-  padding: 10px; /* Adiciona espaçamento entre o conteúdo */
-}
-
-.tabela {
-  width: 100%;
+  min-width: 300px;
 }
 
 .loading-spinner{
