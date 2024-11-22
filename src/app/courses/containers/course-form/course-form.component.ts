@@ -1,9 +1,11 @@
 import { Location } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
 import { CoursesService } from '../../services/courses.service';
+import { Course } from '../../model/course';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { CoursesService } from '../../services/courses.service';
   templateUrl: './course-form.component.html',
   styleUrl: './course-form.component.scss'
 })
-export class CourseFormComponent {
+export class CourseFormComponent implements OnInit {
 
   form!: FormGroup;
 
@@ -19,12 +21,22 @@ export class CourseFormComponent {
 
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: CoursesService,
-    private location: Location) {
+    private location: Location,
+    private route: ActivatedRoute) {
     this.form = this.formBuilder.group({
+    _id: [''],
     name:[''],
     category: ['']
   });
 
+  }
+  ngOnInit(): void {
+    const course: Course = this.route.snapshot.data['course'];
+    this.form.setValue({
+      _id: course._id,
+      name: course.name,
+      category:course.category
+    });
   }
 
   onSubmit() {
@@ -38,7 +50,7 @@ export class CourseFormComponent {
   }
 
   private onSuccess(){
-    this.snackBar.open('Criado com Sucesso!', '', { duration: 5000 });
+    this.snackBar.open('Salvo com Sucesso!', '', { duration: 5000 });
     this.onCancel();
   }
   private onError(){

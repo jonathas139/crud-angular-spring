@@ -1,0 +1,6 @@
+<h2 mat-dialog-title style="color: red;">Alerta!</h2>
+<mat-dialog-content>{{ data }}</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-stroked-button mat-dialog-close style="color: white; background-color: blue;" (click)="onConfim()">Sim</button>
+  <button mat-stroked-button mat-dialog-close style="color: white; background-color: red;" (click)="onCancel()">Não</button>
+</mat-dialog-actions>
