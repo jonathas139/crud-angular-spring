@@ -65,7 +65,10 @@ export class CoursesComponent {
         this.coursesService.delete(course._id).subscribe(() => {
         this.refresh();
         this.snackBar.open('Excluido com Sucesso!', 'X', { duration: 5000, verticalPosition: 'top', horizontalPosition: 'center' });
-        }, error => this.onError('Erro ao tentar Remover!'));
+        }, error => {
+          this.onError('Erro ao tentar Remover!')
+          this.refresh();
+        });
       } else {
         this.refresh();
       }
