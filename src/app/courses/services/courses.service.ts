@@ -11,7 +11,7 @@ export class CoursesService {
 
   private readonly API = 'api/courses';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(readonly httpClient: HttpClient) {}
 
   list() {
     return this.httpClient.get<Course[]>(this.API)
@@ -43,5 +43,11 @@ export class CoursesService {
 
   public delete(id: string){
     return this.httpClient.delete(`${this.API}/${id}`).pipe(first());
+  }
+
+  logout() {
+    // Limpa o sessionStorage
+    sessionStorage.removeItem("auth-token");
+    sessionStorage.removeItem("username");
   }
 }

@@ -30,3 +30,23 @@ mat-card-actions{
  gap: 10px;
 }
 
+img{
+  width: 60px;
+  padding-right: 10px;
+}
+
+mat-toolbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #237e18;
+  min-height: 5%;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+

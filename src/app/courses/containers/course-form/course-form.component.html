@@ -1,9 +1,17 @@
+<mat-toolbar color="primary">
+  <div class="logo">
+    <img src="/assets/png/EEPlanner.png" alt="img"/>
+    <span>EEEPlanner</span>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="onLogout()" >Sair</button>
+  </div>
+</mat-toolbar>
 <mat-card>
-
   <form [formGroup]="form" class="form-course">
 
     <mat-toolbar color="primary">
-        <span>Detalhes do Cursos</span>
+        <span>Minhas Tarefas</span>
     </mat-toolbar>
 
     <mat-card-content>
@@ -12,11 +20,12 @@
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <mat-label>Categoria</mat-label>
+          <mat-label>Status</mat-label>
           <mat-select formControlName="category">
             <mat-option value="null"> </mat-option>
-            <mat-option value="Front-End">Front-End</mat-option>
-            <mat-option value="Back-End">Back-End</mat-option>
+            <mat-option value="Pendente">Pendente</mat-option>
+            <mat-option value="Andamento">Andamento</mat-option>
+            <mat-option value="Concluida">Concluida</mat-option>
           </mat-select>
         </mat-form-field>
     </mat-card-content>

@@ -4,13 +4,13 @@
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <mat-header-cell  *matHeaderCellDef>Curso</mat-header-cell>
+    <mat-header-cell  *matHeaderCellDef>Nome</mat-header-cell>
     <mat-cell  *matCellDef="let courses">{{ courses.name }}</mat-cell>
   </ng-container>
 
   <!-- Categoria Column -->
   <ng-container matColumnDef="category">
-    <mat-header-cell  *matHeaderCellDef>categoria</mat-header-cell>
+    <mat-header-cell  *matHeaderCellDef>Status</mat-header-cell>
     <mat-cell  *matCellDef="let courses">{{ courses.category }}
       <mat-icon aria-hidden="false" aria-label="Categoria do Curso">{{ courses.category | category }}</mat-icon>
     </mat-cell>

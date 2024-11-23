@@ -74,4 +74,11 @@ export class CoursesComponent {
       }
     });
   }
+
+  onLogout(){
+      this.coursesService.logout();
+      // Redireciona para a tela de login
+      this.router.navigate(['/login']);
+
+  }
 }
