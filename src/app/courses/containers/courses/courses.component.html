@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
   <div class="logo">
     <img src="/assets/png/EEPlanner.png" alt="img"/>
-    <span>EEEPlanner</span>
+    <span>EEPlanner</span>
   </div>
   <div>
     <button mat-raised-button color="primary" (click)="onLogout()" >Sair</button>
   </div>
 </mat-toolbar>
 <mat-card>
-  <mat-toolbar color="primary">Cursos Diponíveis</mat-toolbar>
+  <mat-toolbar color="primary">Tarefas Diponíveis</mat-toolbar>
   <div class=".column-flex mat-elevation-z8">
     <app-courses-list *ngIf="courses$ | async as courses; else loading"
     [courses]="courses"

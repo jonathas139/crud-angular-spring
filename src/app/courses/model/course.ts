@@ -1,7 +1,11 @@
-export interface Course {
+export interface User {
+  id: number; // Apenas o ID é obrigatório
+  name?: string; // Campos opcionais
+  email?: string;
+}
 
-  _id: string;
+export interface Course {
+  _id?: string;
   name: string;
   category: string;
-
 }

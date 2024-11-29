@@ -16,6 +16,7 @@ import { ConfimDialogComponent } from '../../../shared/components/confim-dialog/
 export class CoursesComponent {
 
   courses$: Observable<Course[]> | null = null;
+  userId: number;
 
   private snackBar = inject(MatSnackBar);
 
@@ -27,11 +28,12 @@ export class CoursesComponent {
     private router: Router,
     private route:  ActivatedRoute
   ){
+    this.userId = parseInt(sessionStorage.getItem('user_id') || '0', 10);
     this.refresh();
   }
 
   refresh(){
-    this.courses$ = this.coursesService.list()
+    this.courses$ = this.coursesService.listByUser(this.userId)
     .pipe(
       catchError(error => {
         this.onError('Erro ao carregar!');
@@ -62,7 +64,7 @@ export class CoursesComponent {
   onDelete(course: Course) {
     this.onConfirm(`Tem certeza que deseja remover? "${course.name}"?`).subscribe(result => {
       if (result) {
-        this.coursesService.delete(course._id).subscribe(() => {
+        this.coursesService.delete(course._id!).subscribe(() => {
         this.refresh();
         this.snackBar.open('Excluido com Sucesso!', 'X', { duration: 5000, verticalPosition: 'top', horizontalPosition: 'center' });
         }, error => {

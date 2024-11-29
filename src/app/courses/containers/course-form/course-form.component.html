@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <div class="logo">
     <img src="/assets/png/EEPlanner.png" alt="img"/>
-    <span>EEEPlanner</span>
+    <span>EEPlanner</span>
   </div>
   <div>
     <button mat-raised-button color="primary" (click)="onLogout()" >Sair</button>
@@ -22,7 +22,6 @@
         <mat-form-field class="full-width">
           <mat-label>Status</mat-label>
           <mat-select formControlName="category">
-            <mat-option value="null"> </mat-option>
             <mat-option value="Pendente">Pendente</mat-option>
             <mat-option value="Andamento">Andamento</mat-option>
             <mat-option value="Concluida">Concluida</mat-option>
