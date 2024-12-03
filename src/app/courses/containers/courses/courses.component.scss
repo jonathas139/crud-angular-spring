@@ -24,7 +24,7 @@ mat-card {
 }
 
 img{
-  width: 60px;
+  width: 80px;
   padding-right: 10px;
 }
 
@@ -42,3 +42,9 @@ mat-toolbar{
   justify-content: center;
   align-items: center;
 }
+
+.buttonExit{
+  display: flex;
+  gap: 20px;
+}
+

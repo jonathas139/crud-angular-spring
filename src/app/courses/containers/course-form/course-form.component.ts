@@ -16,6 +16,7 @@ export class CourseFormComponent implements OnInit {
 
   form!: FormGroup;
   user: number;  // Alterado para armazenar o objeto completo do usuário
+  userName: string | null = '';
 
   private snackBar = inject(MatSnackBar);
 
@@ -42,6 +43,7 @@ export class CourseFormComponent implements OnInit {
       name: course.name,
       category: course.category,
     });
+    this.userName = sessionStorage.getItem('username');
   }
 
   onSubmit() {

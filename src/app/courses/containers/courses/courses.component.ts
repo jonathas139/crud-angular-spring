@@ -17,6 +17,7 @@ export class CoursesComponent {
 
   courses$: Observable<Course[]> | null = null;
   userId: number;
+  userName: string | null = '';
 
   private snackBar = inject(MatSnackBar);
 
@@ -30,6 +31,10 @@ export class CoursesComponent {
   ){
     this.userId = parseInt(sessionStorage.getItem('user_id') || '0', 10);
     this.refresh();
+  }
+
+  ngOnInit(): void {
+    this.userName = sessionStorage.getItem('username');
   }
 
   refresh(){

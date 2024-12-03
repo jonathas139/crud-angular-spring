@@ -30,11 +30,6 @@ mat-card-actions{
  gap: 10px;
 }
 
-img{
-  width: 60px;
-  padding-right: 10px;
-}
-
 mat-toolbar{
   display: flex;
   flex-direction: row;
@@ -50,3 +45,12 @@ mat-toolbar{
   align-items: center;
 }
 
+img{
+  width: 80px;
+  padding-right: 10px;
+}
+
+.buttonExit{
+  display: flex;
+  gap: 20px;
+}
